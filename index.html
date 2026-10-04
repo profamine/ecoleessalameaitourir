@@ -670,7 +670,7 @@ chips('#tl',[1,2,3,4,5,6].map(function(i){return [i,LV[i]]}),1,function(v){tlv=+
 $('#tc').onchange=function(){tci=+this.value;tt()};$('#tp').onclick=function(){print()};tt();
 
 var RM=D.remote||{items:[],types:{}},rl=0,rty='',rsu='',rq='';
-function rr(){
+function rr(){ 
   var it=RM.items.filter(function(x){var L=[].concat(x.level||[]);return (!rl||!L.length||L.indexOf(rl)>-1)&&(!rty||x.type===rty)&&(!rsu||x.subject===rsu)&&(!rq||(x.title+' '+x.subject+' '+(x.desc||'')).indexOf(rq)>-1)}).sort(function(a,b){return pd(b.date||'2000-01-01')-pd(a.date||'2000-01-01')});
   $('#rn').textContent=it.length?it.length+' ملفًا':'';
   $('#rg').innerHTML=it.length?it.map(function(x){var f=x.file,L=[].concat(x.level||[]).map(function(i){return LV[i]}).join('، ')||'كل المستويات',
